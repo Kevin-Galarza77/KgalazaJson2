@@ -12,17 +12,43 @@
 
             <Label Text="Listado de Reservas" TextColor="Black" FontAttributes="Bold"
                    HorizontalOptions="Center" FontSize="25" Margin="10"></Label>
-            
+
+            <!-- ENCABEZADO TIPO TABLA -->
+            <Grid ColumnSpacing="1" RowSpacing="1" BackgroundColor="Black" Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre" BackgroundColor="Yellow" TextColor="Black" FontAttributes="Bold" Grid.Column="0"/>
+                <Label Text="Apellido" BackgroundColor="Yellow" TextColor="Black" FontAttributes="Bold" Grid.Column="1"/>
+                <Label Text="Email" BackgroundColor="Yellow" TextColor="Black" FontAttributes="Bold" Grid.Column="2"/>
+                <Label Text="Descripción" BackgroundColor="Yellow" TextColor="Black" FontAttributes="Bold" Grid.Column="3"/>
+                <Label Text="Estado" BackgroundColor="Yellow" TextColor="Black" FontAttributes="Bold" Grid.Column="4"/>
+            </Grid>
+
+            <!-- DATOS TIPO TABLA -->
             <CollectionView x:Name="listView">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="10" Margin="20" BackgroundColor="Gray">
-                            <Label Text="{Binding name}" TextColor="Black" />
-                            <Label Text="{Binding lastName}" TextColor="Black"/>
-                            <Label Text="{Binding email}" TextColor="Black"/>
-                            <Label Text="{Binding description}" TextColor="Black"/>
-                            <Label Text="{Binding status}" TextColor="Black"/>
-                        </StackLayout>
+                        <Grid ColumnSpacing="1" RowSpacing="1" BackgroundColor="Black" Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding name}" BackgroundColor="White" TextColor="Black" Grid.Column="0"/>
+                            <Label Text="{Binding lastName}" BackgroundColor="White" TextColor="Black" Grid.Column="1"/>
+                            <Label Text="{Binding email}" BackgroundColor="White" TextColor="Black" Grid.Column="2"/>
+                            <Label Text="{Binding description}" BackgroundColor="White" TextColor="Black" Grid.Column="3"/>
+                            <Label Text="{Binding status}" BackgroundColor="White" TextColor="Black" Grid.Column="4"/>
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
