@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KgalazaJson2.Views.FrmBooking"
+             Title="  Nueva Reserva">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Nombre" />
+            <Entry x:Name="entryName" Placeholder="Ingresa el nombre" />
+
+            <Label Text="Apellido" />
+            <Entry x:Name="entryLastName" Placeholder="Ingresa el apellido" />
+
+            <Label Text="Descripción" />
+            <Editor x:Name="editorDescription" Placeholder="Escribe una descripción..." AutoSize="TextChanges" />
+
+            <Label Text="Email" />
+            <Entry x:Name="entryEmail" Placeholder="correo@ejemplo.com" Keyboard="Email" />
+
+            <Picker x:Name="estadoPicker" Title="Estado" IsVisible="False">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>ACTIVO</x:String>
+                        <x:String>INACTIVO</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label x:Name="lblErrors" TextColor="Red" FontAttributes="Italic" />
+
+            <Button Text="Guardar" HorizontalOptions="Center" TextColor="White" BackgroundColor="Blue" Clicked="OnSubmitClicked" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
